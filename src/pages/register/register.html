@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+<ion-title>Sign Up</ion-title> </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-grid>
+<ion-row color="primary" justify-content-center>
+<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+<form #form="ngForm" (ngSubmit)="signUp()"> <div text-center>
+<br>
+<img style="width: 150px; height: 135px;" src="assets/imgs/logo-polbeng.png"/>
+              <h4>ProfileApp</h4>
+            </div>
+            <div padding>
+              <ion-item>
+<ion-input name="username" type="text" placeholder="Username" [(ngModel)]="userData.username"
+required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="email" type="email"
+placeholder="Email" [(ngModel)]="userData.email" required></ion-input>
+              </ion-item>
+              <ion-item>
+<ion-input name="password" type="password" placeholder="Password" [(ngModel)]="userData.password"
+required></ion-input>
+              </ion-item>
+<ion-item>
+    <ion-input name="phone" type="number" placeholder="Phone" [(ngModel)]="userData.phone"
+    required></ion-input>
+                    </ion-item>
+    <ion-item>
+    <ion-input name="position" type="text"
+    placeholder="Position" [(ngModel)]="userData.position" required></ion-input>
+                  </ion-item>
+                  <ion-item>
+    <ion-input name="affiliation" type="text" placeholder="Affiliation"
+    [(ngModel)]="userData.affiliation" required></ion-input> </ion-item>
+                </div>
+                <div padding>
+    <button ion-button size="large" type="submit" [disabled]="form.invalid" block>Register</button>
+                </div>
+              </form>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+    </ion-content>

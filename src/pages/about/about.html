@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button> 
+    <ion-title>About Developer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item class="profile-item">
+    <div class="profile-picture big-profile-picture">
+      <img src="../../assets/imgs/avatar-finn.png" *ngIf="!userData.image"/>
+      <img [src]="base64Image" *ngIf="base64Image" width="100%" height="100%"/>
+      <img [src]="userData.image" *ngIf="userData.image" width="100%" height="100%"/>
+
+    </div>
+    <button ion-button color="primary" (click)="takePhoto()">Ganti Photo</button>
+    <h2 class="profile-name dark">{{userData.username}}</h2>
+    <div class="profile-info">{{userData.position}}</div>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" value="{{userData.username}}" [(ngModel)]="userData.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" value="{{userData.password}}" [(ngModel)]="userData.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" value="{{userData.email}}" [(ngModel)]="userData.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="number" value="{{userData.phone}}" [(ngModel)]="userData.phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Affiliation</ion-label>
+        <ion-input type="text" value="{{userData.affiliation}}" [(ngModel)]="userData.affiliation"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Position</ion-label>
+        <ion-input type="text" value="{{userData.position}}" [(ngModel)]="userData.position"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" block (click)="updateProfile()">Update Profile</button>
+</ion-content>

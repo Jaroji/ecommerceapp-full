@@ -1,0 +1,13 @@
+page-home {
+    .price{
+        color: color($colors, secondary);
+    }
+    .footer-left {
+        padding: 0 0;
+    }
+    .footer-right {
+        font-size: 1.6rem;
+        text-align: right;
+        padding: 0;
+    }
+}
